@@ -1,0 +1,166 @@
+# Cheat Sheet — Selection (if / else)
+
+Quick review of Lesson 05.
+
+---
+
+## 1. What is selection?
+
+Selection lets your program **choose** between different paths.
+
+It uses a **predicate** (true/false expression) to decide which block runs.
+
+---
+
+## 2. Basic `if`
+
+```d
+int n = 10;
+
+if (n > 5)
+{
+    writeln ("Greater than 5");
+}
+```
+
+If the predicate is **true**, the block runs.  
+If **false**, it is skipped.
+
+---
+
+## 3. `if` / `else`
+
+```d
+int n = 3;
+
+if (n > 5)
+{
+    writeln ("Greater");
+}
+else
+{
+    writeln ("Not greater");
+}
+```
+
+Only one block runs.
+
+---
+
+## 4. `else if`
+
+```d
+int n = 7;
+
+if (n > 10)
+{
+    writeln ("Big");
+}
+else if (n > 5)
+{
+    writeln ("Medium");
+}
+else
+{
+    writeln ("Small");
+}
+```
+
+The first true predicate wins.
+
+---
+
+## 5. Predicates you know so far
+
+- `==` equal  
+- `!=` not equal  
+- `<` less than  
+- `>` greater than  
+- `<=` less than or equal  
+- `>=` greater than or equal  
+
+Predicates produce **true** or **false**.
+
+---
+
+## 6. Dual Truth
+
+Every predicate has two possible outcomes:
+
+- **true** → block runs  
+- **false** → block does not run  
+
+This is the foundation of selection.
+
+See **notes/05-selection.md** for deeper review of Dual Truth.
+
+---
+
+## 7. Common beginner mistakes
+
+### Using `=` instead of `==`
+```d
+if (n = 5) { }   // wrong: assignment
+```
+
+Correct:
+```d
+if (n == 5) { }
+```
+
+### Forgetting braces
+```d
+if (n > 5)
+    writeln ("OK");
+    writeln ("Done");   // always runs
+```
+
+### Writing unreachable code
+```d
+if (true)
+{
+    writeln ("Always");
+}
+else
+{
+    writeln ("Never");   // unreachable
+}
+```
+
+---
+
+## 8. Hydratable example
+
+Path:
+```
+exercises/01-lessons/05-selection/basic/app.d
+```
+
+Example:
+```d
+write ("Enter a number: ");
+string text = readln ();
+writeln ("You typed: ", text);
+
+if (text == "hello")
+{
+    writeln ("Greeting detected.");
+}
+else
+{
+    writeln ("Not a greeting.");
+}
+```
+
+---
+
+## 9. Summary
+
+- Selection chooses between paths  
+- Predicates decide which block runs  
+- `if`, `else if`, and `else` form a chain  
+- Dual Truth: every predicate is true or false  
+- Use `==` for comparison  
+- Braces prevent accidental execution  
+
+Selection is the foundation of decision‑making in D.
