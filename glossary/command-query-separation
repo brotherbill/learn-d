@@ -1,0 +1,121 @@
+# Command–Query Separation
+
+**Command–Query Separation (CQS)** is a design principle that states:
+
+> A function should either **perform an action** (command)  
+> or **return information** (query),  
+> but **not both**.
+
+This separation makes code easier to understand, easier to test, and easier to reason about.
+
+---
+
+## 1. Commands do work
+
+Commands:
+
+- modify state  
+- cause side effects  
+- perform actions  
+- may return nothing  
+
+Example:
+
+```d
+void addCustomer(string name)
+```
+
+This is a command.  
+It changes the customer list.
+
+See glossary/command.md.
+
+---
+
+## 2. Queries return information
+
+Queries:
+
+- read state  
+- compute results  
+- return values  
+- have no side effects  
+
+Example:
+
+```d
+int customerCount()
+```
+
+This is a query.  
+It returns information.
+
+See glossary/query.md.
+
+---
+
+## 3. Why mixing commands and queries is harmful
+
+A function that both **changes state** and **returns information** is confusing:
+
+- callers cannot predict behavior  
+- testing becomes harder  
+- reasoning becomes harder  
+- side effects become hidden  
+- bugs become subtle  
+
+Example of a bad design:
+
+```d
+int addCustomer(string name)
+{
+    customers ~= name;       // command
+    return customers.length; // query
+}
+```
+
+This violates CQS.
+
+---
+
+## 4. Benefits of Command–Query Separation
+
+CQS makes code:
+
+- clearer  
+- more predictable  
+- easier to test  
+- easier to reason about  
+- easier to maintain  
+
+It also aligns with:
+
+- pure functions  
+- side‑effect control  
+- stable APIs  
+- clean architecture  
+
+---
+
+## 5. Summary
+
+**Command–Query Separation**:
+
+- commands do work  
+- queries return information  
+- functions must not do both  
+- mixing them creates confusion  
+- separating them creates clarity  
+
+CQS is a cornerstone of clean API design.
+
+---
+
+## See also
+
+- glossary/command.md  
+- glossary/query.md  
+- glossary/pure-function.md  
+- glossary/side-effect.md  
+- glossary/function.md  
+- glossary/api.md

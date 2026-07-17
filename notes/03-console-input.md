@@ -62,7 +62,7 @@ writeln ("Hello, ", name);
 
 ### Why this works
 `write` prints the prompt.  
-`readln` waits for the user.  
+`readln` flushes the buffer, waits for the user.  
 `writeln` prints the result.
 
 This example uses only features already introduced:
