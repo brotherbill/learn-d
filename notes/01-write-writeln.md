@@ -13,21 +13,21 @@ You will use three kinds of literals in this lesson.
 ### Character literal
 A single character inside single quotes:
 ```
-// exercises/01-lessons/01-write-writeln/literal-char/app.d
+// exercises/01-lessons/01-write-writeln/01-01-literal-char/app.d
 'w'
 ```
 
 ### Integer literal
 A whole number:
 ```
-// exercises/01-lessons/01-write-writeln/literal-int/app.d
+// exercises/01-lessons/01-write-writeln/01-02-literal-int/app.d
 42
 ```
 
 ### String literal
 Text inside double quotes:
 ```
-// exercises/01-lessons/01-write-writeln/literal-string/app.d
+// exercises/01-lessons/01-write-writeln/01-03-literal-string/app.d
 "I can learn D"
 ```
 
@@ -47,7 +47,7 @@ The next output appears on the **next line**.
 
 Example:
 ```
-// exercises/01-lessons/01-write-writeln/write-vs-writeln/app.d
+// exercises/01-lessons/01-write-writeln/02-01-write-vs-writeln/app.d
 write ("Hello");
 writeln ("World");
 ```
@@ -66,7 +66,7 @@ When printing a prompt before `readln`, the buffer is **automatically flushed**.
 So this will always show the prompt:
 
 ```
-// exercises/01-lessons/01-write-writeln/prompt-basic/app.d
+// exercises/01-lessons/01-write-writeln/03-01-prompt-basic/app.d
 write ("Enter your name: ");
 string name = readln ();
 ```
@@ -77,7 +77,7 @@ Using `stdout.flush` can make debugging more explicit.
 It guarantees that nothing is hiding in the buffer.
 
 ```
-// exercises/01-lessons/01-write-writeln/prompt-flush/app.d
+// exercises/01-lessons/01-write-writeln/03-02-prompt-flush/app.d
 write ("Enter your name: ");
 stdout.flush ();
 string name = readln ();
@@ -94,7 +94,7 @@ This means they accept **any number of arguments**.
 
 Example:
 ```
-// exercises/01-lessons/01-write-writeln/variadic-basic/app.d
+// exercises/01-lessons/01-write-writeln/04-01-variadic-basic/app.d
 writeln ("A", "B", "C");
 ```
 
@@ -104,7 +104,7 @@ Some variadic functions require all arguments to be the **same type**.
 They can mix and match types freely:
 
 ```
-// exercises/01-lessons/01-write-writeln/variadic-mixed/app.d
+// exercises/01-lessons/01-write-writeln/04-02-variadic-mixed/app.d
 writeln ("Answer: ", 42, " and letter ", 'd');
 ```
 
@@ -112,7 +112,7 @@ writeln ("Answer: ", 42, " and letter ", 'd');
 
 This:
 ```
-// exercises/01-lessons/01-write-writeln/no-spaces/app.d
+// exercises/01-lessons/01-write-writeln/04-03-no-spaces/app.d
 writeln ("A", "B", "C");
 ```
 
@@ -124,7 +124,7 @@ ABC
 If you want spaces, you must include them yourself:
 
 ```
-// exercises/01-lessons/01-write-writeln/with-spaces/app.d
+// exercises/01-lessons/01-write-writeln/04-04-with-spaces/app.d
 writeln ("A ", "B ", "C");
 ```
 

@@ -40,7 +40,7 @@ void main ()
     // ------------------------------------------------------------
     // write vs writeln demonstration
     // ------------------------------------------------------------
-    write ('D');                 // prints: D
-    write (999);                 // prints: D999
+    write ('D');                 // writes 'D' to the buffer only
+    write (999);                 // writes 999 to the buffer only
     writeln ("I can learn D");   // prints: D999I can learn D\n
 }
